@@ -5,3 +5,5 @@
 - `PR01_Sviatishenko_D.ipynb` — Google Colab, GitHub і перше знайомство з даними;
 - `PR02_Sviatishenko_D.ipynb` — дослідницький аналіз і підготовка даних;
 - `PR03_Sviatishenko_D.ipynb` — перша модель і базове оцінювання якості.
+
+Notebook мініпроєкту робіт 4–7: `../classification-mini-project/notebooks/PR04_Sviatishenko_D.ipynb`.

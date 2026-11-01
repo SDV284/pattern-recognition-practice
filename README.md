@@ -11,7 +11,8 @@
 
 ## Структура репозиторію
 
-- `notebooks/` – Google Colab і Jupyter Notebook;
+- `notebooks/` – Google Colab і Jupyter Notebook робіт 1–3;
+- `classification-mini-project/` – мініпроєкт практичних робіт 4–7;
 - `data/` – навчальні набори даних;
 - `reports/` – звіти та додаткові матеріали;
 - `README.md` – опис проєкту;
@@ -22,6 +23,7 @@
 1. Google Colab, GitHub і перше знайомство з даними.
 2. Дослідницький аналіз і підготовка даних.
 3. Перша модель і базове оцінювання якості.
+4. Мініпроєкт «Порівняння класичних моделей класифікації» (практичні роботи 4–7).
 
 ## Практична робота 1
 
@@ -108,6 +110,40 @@
 [Модель](models/iris_decision_tree.joblib) ·
 [Таблиця метрик](reports/model_metrics.csv) ·
 [Відповіді на контрольні запитання](reports/PR03_control_questions.md)
+
+## Практичні роботи 4–7
+
+**Тема:** Мініпроєкт «Порівняння класичних моделей класифікації» (набір Heart Disease, UCI).
+
+У мініпроєкті виконано:
+
+- фіксований стратифікований поділ train/test 242 / 61 і єдину 5-кратну StratifiedKFold;
+- Pipeline із ColumnTransformer (SimpleImputer, StandardScaler, OneHotEncoder);
+- логістичну регресію зі стандартизацією та без неї, L1/L2 для C = 0,01…100 (ПР4);
+- k-NN, Gaussian Naive Bayes, LDA і QDA з аналізом стабільності (ПР5);
+- лінійну та RBF-SVM і GridSearchCV (ПР6);
+- CV-порівняння кандидатів, OOF ROC-криві й матриці помилок, вибір моделі до відкриття test,
+  одноразове тестування та збереження Pipeline (ПР7).
+
+### Основні результати
+
+| Модель | CV F1 | CV ROC AUC |
+|---|---:|---:|
+| **Logistic Regression (L2, C = 10)** | **0,836** | **0,900** |
+| SVM (RBF, C = 10, gamma = 0,01) | 0,827 | 0,897 |
+| k-NN (k = 3, мангеттенська) | 0,818 | 0,877 |
+| LDA | 0,813 | 0,899 |
+| QDA (reg_param = 0,7) | 0,802 | 0,885 |
+| GaussianNB | 0,749 | 0,877 |
+
+Фінальна модель — логістична регресія; одноразово на test: F1 = 0,862, ROC AUC = 0,962, recall = 0,893.
+
+[Опис мініпроєкту](classification-mini-project/README.md) ·
+[Відкрити Notebook](classification-mini-project/notebooks/PR04_Sviatishenko_D.ipynb) ·
+[CV-порівняння](classification-mini-project/reports/cv_model_comparison.csv) ·
+[Test-метрики](classification-mini-project/reports/final_test_metrics.csv) ·
+[Модель](classification-mini-project/models/best_classifier.joblib) ·
+[Відповіді на контрольні запитання](classification-mini-project/reports/PR04_07_control_questions.md)
 
 ## Запуск
 
