@@ -1,0 +1,2 @@
+model,params,n_test,test_accuracy,test_precision,test_recall,test_f1,test_roc_auc
+Logistic Regression,"penalty=l2, C=10, solver=liblinear",61,0.8689,0.8333,0.8929,0.8621,0.9621
